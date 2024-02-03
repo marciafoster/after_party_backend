@@ -1,4 +1,4 @@
-const pgp = require("pg-promise");
+const pgp = require('pg-promise')()
 require("dotenv").config();
 
 const cn = {
@@ -9,6 +9,6 @@ const cn = {
     password: process.env.PG_PASSWORD,
 };
 
-const db = ppg(cn);
+const db = pgp(cn);
 
 module.exports = db;

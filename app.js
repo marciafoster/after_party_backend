@@ -1,19 +1,19 @@
-//dependencies
-const express = require('express')  
-//const Controller = require("./controllers/")
-
-//configuration
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const app = express();
+// const usersController = require("./Controllers/usersController");
 
 //middleware
-app.use ()
+app.use(cors());
+app.use(express.json());
+// app.use("/users", usersController);
 
-app.get('/', (req, res) =>{
-    res.send('Welcome to !')
+app.get("/", (req, res) => {
+  res.send("Welcome to Our App");
 });
 
-app.get('*', (_, res) => {
-    res.status(404).send("The page that you are looking for is not found.")
-});
+// app.get('/', (req, res) => {
+//     res.json({ index: "This is the index page" })
+// })
 
-module.exports = app
+module.exports = app;

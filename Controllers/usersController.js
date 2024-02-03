@@ -3,6 +3,7 @@ const users = express.Router()
 require("dotenv").config()
 const jwt = require('jsonwebtoken')
 const secret = process.env.SECRET
+const { createUser, getUsers, logInUser } = require('../queries/users')
 
 
 

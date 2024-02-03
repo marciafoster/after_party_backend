@@ -5,7 +5,7 @@ require('dotenv').config();
 
 
 const app = express();
-const PORT = 3001; // Choose any available port
+const PORT = process.env.PORT
 
 // Define your Google Maps API endpoint
 const BASE_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
