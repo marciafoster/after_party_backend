@@ -1,28 +1,25 @@
-const express = require('express');
-const axios = require('axios');
-const cors = require('cors');
-require('dotenv').config();
+const express = require("express");
+const axios = require("axios");
+require("dotenv").config();
+const app = require("./app.js")
 
 
-const app = express();
-const PORT = 3001; // Choose any available port
+const PORT = process.env.PORT;
 
 // Define your Google Maps API endpoint
-const BASE_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
+const BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 
 // Define your Google Maps API key
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
-app.use(cors())
-
 // Set up a route to proxy requests to the Google Maps API
-app.get('/places', async (req, res) => {
+app.get("/places", async (req, res) => {
   try {
     const response = await axios.get(BASE_URL, {
       params: {
         key: API_KEY,
-        ...req.query // Forward query parameters from the client to the Google Maps API
-      }
+        ...req.query, // Forward query parameters from the client to the Google Maps API
+      },
     });
     res.json(response.data);
   } catch (error) {

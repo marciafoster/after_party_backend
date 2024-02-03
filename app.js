@@ -1,19 +1,26 @@
-//dependencies
-const express = require('express')  
-//const Controller = require("./controllers/")
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const app = express();
 
-//configuration
-const app = express()
+const usersController = require("./Controllers/usersController");
 
 //middleware
-app.use ()
+app.use(cors());
+app.use(express.json());
 
-app.get('/', (req, res) =>{
-    res.send('Welcome to !')
+app.use("/users", usersController);
+const PORT = process.env.PORT;
+
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Our App");
 });
 
-app.get('*', (_, res) => {
-    res.status(404).send("The page that you are looking for is not found.")
-});
 
-module.exports = app
+
+// app.listen(PORT, () => {
+//   console.log(`Proxy server is running on http://localhost:${PORT}`);
+// });
+
+module.exports = app;
