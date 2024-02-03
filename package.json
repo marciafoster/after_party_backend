@@ -10,7 +10,9 @@
   }
 
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "db:init": "psql -U postgres -f db/schema.sql",
+    "db:seed": "psql -U postgres -f db/seed.sql"
   },
   "name": "after_party_backend",
   "version": "1.0.0",
