@@ -8,4 +8,25 @@
     "jsonwebtoken": "^9.0.2",
     "pg-promise": "^11.5.4"
   }
+
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "after_party_backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marciafoster/after_party_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marciafoster/after_party_backend/issues"
+  },
+  "homepage": "https://github.com/marciafoster/after_party_backend#readme",
+  "description": ""
+
 }
