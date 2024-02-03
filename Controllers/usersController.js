@@ -22,7 +22,7 @@ users.post('/', async (req, res) => {
         const token = jwt.sign({ userId: newUser.user_id, username: newUser.username }, secret)
         res.status(201).json({ user: newUser, token })
     } catch (err) {
-        res.status(500).json({ error: "Invalid Information", info: err })
+        res.status(500).json({ error: "Invalid Information", info: err.message })
     }
 })
 
