@@ -8,6 +8,6 @@ CREATE DATABASE afterparties_app;
     username VARCHAR(30) NOT NULL,
     email VARCHAR(225) NOT NULL,
     password_hash VARCHAR(225) NOT NULL
-    favorite_places BOOLEAN DEFAULT false
+    favorite_places BOOLEAN DEFAULT false,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
  );
