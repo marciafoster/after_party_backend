@@ -1,8 +1,9 @@
 const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
+const app = require("./app.js")
 
-const app = express();
+
 const PORT = process.env.PORT;
 
 // Define your Google Maps API endpoint
