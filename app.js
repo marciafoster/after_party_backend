@@ -4,13 +4,17 @@ require("dotenv").config();
 const app = express();
 
 const usersController = require("./Controllers/usersController");
+const locationsController = require("./Controllers/locationsController");
 
 //middleware
 app.use(cors());
 app.use(express.json());
 
 app.use("/users", usersController);
+app.use("/locations", locationsController);
 const PORT = process.env.PORT;
+
+
 
 
 app.get("/", (req, res) => {
